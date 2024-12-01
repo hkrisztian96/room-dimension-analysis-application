@@ -14,7 +14,7 @@ public final class AppLogger {
     private static final Logger LOGGER = Logger.getLogger(AppLogger.class.getName());
 
     static {
-        // Set the log level to INFO
+        // Set the log level to FINE
         LOGGER.setLevel(Level.FINE);
 
         // Create a ConsoleHandler

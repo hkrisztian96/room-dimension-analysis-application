@@ -87,7 +87,7 @@ class InputFileProcessorTest {
     }
 
     @Test
-    @DisplayName("Should throw InvalidMethodParameterException when providing an empty file")
+    @DisplayName("Should process successfully with an empty file a provide result(0, empty, empty)")
     void testProcessEmptyFile() throws IOException {
         Path tempFile = tempDir.resolve("empty-input.txt");
         Files.write(tempFile, "".getBytes());

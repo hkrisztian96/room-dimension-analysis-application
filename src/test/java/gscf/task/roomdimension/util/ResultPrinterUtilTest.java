@@ -52,8 +52,8 @@ class ResultPrinterUtilTest {
     @Test
     @DisplayName("Should log cubic shaped room dimensions")
     void testPrintCubicShapedRooms() {
-        Room room1 = new Room("3x3x3", 54, true);
-        Room room2 = new Room("4x4x4", 96, true);
+        Room room1 = new Room("3x3x3", 63, true);
+        Room room2 = new Room("4x4x4", 112, true);
         Result result = new Result(0, List.of(room1, room2), List.of());
         ResultPrinterUtil.printCubicShapedRooms(result);
         Mockito.verify(MOCK_HANDLER).publish(Mockito.argThat(arg -> arg.getMessage().contains("Cubic shaped room dimensions are: [3x3x3, 4x4x4]")));
@@ -62,8 +62,8 @@ class ResultPrinterUtilTest {
     @Test
     @DisplayName("Should log duplicated room dimensions")
     void testPrintDuplicatedRooms() {
-        Room room1 = new Room("3x4x5", 94, false);
-        Room room2 = new Room("6x7x8", 314, false);
+        Room room1 = new Room("3x4x5", 106, false);
+        Room room2 = new Room("6x7x8", 334, false);
         Result result = new Result(0, List.of(), List.of(room1, room2));
         ResultPrinterUtil.printDuplicatedRooms(result);
         Mockito.verify(MOCK_HANDLER).publish(Mockito.argThat(arg -> arg.getMessage().contains("Duplicated room dimensions are: [3x4x5, 6x7x8]")));
